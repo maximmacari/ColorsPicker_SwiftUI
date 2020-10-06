@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var colors = UIColor.green
+    
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack{
+            Rectangle()
+                .fill(Color.init(colors))
+                .edgesIgnoringSafeArea(.all)
+            
+            
+            ColorsPicker(colors: self.$colors)
+        }
+            
     }
 }
 
